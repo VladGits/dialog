@@ -1,0 +1,81 @@
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100dvh; // iOS-safe height
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+  
+    // Safe padding for iOS (notch)
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  
+  .header {
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 10;
+    display: flex;
+    padding: 12px;
+    border-bottom: 1px solid #ccc;
+    gap: 8px;
+  }
+  
+  .input {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+  }
+  
+  .closeButton {
+    background: none;
+    border: none;
+    font-size: 24px;
+    line-height: 1;
+    cursor: pointer;
+  }
+  
+  .results {
+    flex: 1;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch; // for smooth scroll on iOS
+    padding: 12px;
+  }
+  
+  .listContainer {
+    margin-bottom: 16px;
+  
+    h3 {
+      margin-bottom: 4px;
+      font-size: 18px;
+    }
+  
+    ul {
+      padding-left: 16px;
+  
+      li {
+        margin-bottom: 4px;
+      }
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .input {
+      font-size: 14px;
+    }
+  
+    .closeButton {
+      font-size: 20px;
+    }
+  
+    .listContainer h3 {
+      font-size: 16px;
+    }
+  }
+  

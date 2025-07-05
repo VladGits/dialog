@@ -1,10 +1,14 @@
+import { useState } from "react";
+import { FullScreenSearchModal } from "./components/FullScreenModal";
 import "./App.css";
-import SearchModal from "./components/SearchModal/SearchModal";
 
 function App() {
+  const [open, setOpen] = useState(false);
+
   return (
     <>
-      <SearchModal />
+      <button onClick={() => setOpen(true)}>Open Modal</button>
+      <FullScreenSearchModal isOpen={open} onClose={() => setOpen(false)} />
     </>
   );
 }
